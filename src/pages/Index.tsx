@@ -169,7 +169,7 @@ const Index = () => {
             <div className="space-y-6 animate-fade-in">
               <Badge className="bg-accent/20 text-accent border-accent">Каршеринг в Великом Новгороде</Badge>
               <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-                Свобода <span className="text-gradient">движения</span> в один клик
+                Приехал <span className="text-gradient">оставил</span> свободен
               </h1>
               <p className="text-xl text-muted-foreground">
                 Современный каршеринг с онлайн-бронированием. Более 50 автомобилей доступны 24/7. От эконома до премиума.
