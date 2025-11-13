@@ -20,64 +20,68 @@ const Index = () => {
   const cars = [
     {
       id: 1,
-      name: 'Tesla Model 3',
-      type: 'Электро',
-      price: 450,
+      name: 'Lada Granta',
+      type: 'Эконом',
+      price: 13,
       image: '🚗',
-      features: ['Автопилот', 'Премиум аудио', '0-100 за 3.3с'],
+      features: ['Кондиционер', 'ABS', 'Подушки безопасности'],
       available: true,
       coords: { lat: 58.5219, lng: 31.2750 }
     },
     {
       id: 2,
-      name: 'BMW 3 Series',
-      type: 'Бизнес',
-      price: 380,
+      name: 'Lada Granta',
+      type: 'Эконом',
+      price: 13,
       image: '🚙',
-      features: ['Кожаный салон', 'Подогрев сидений', 'Круиз-контроль'],
+      features: ['Кондиционер', 'ABS', 'Подушки безопасности'],
       available: true,
       coords: { lat: 58.5180, lng: 31.2690 }
     },
     {
       id: 3,
-      name: 'Hyundai Solaris',
+      name: 'Lada Granta',
       type: 'Эконом',
-      price: 220,
+      price: 13,
       image: '🚘',
-      features: ['Кондиционер', 'Bluetooth', 'ABS'],
-      available: true,
+      features: ['Кондиционер', 'ABS', 'Подушки безопасности'],
+      available: false,
       coords: { lat: 58.5240, lng: 31.2800 }
     },
     {
       id: 4,
-      name: 'Mercedes-Benz E-Class',
-      type: 'Премиум',
-      price: 550,
+      name: 'Hyundai Solaris',
+      type: 'Комфорт',
+      price: 13,
       image: '🚖',
-      features: ['Массаж сидений', 'Панорама', 'Adaptive Cruise'],
-      available: false,
+      features: ['Кондиционер', 'Bluetooth', 'Подогрев сидений'],
+      available: true,
       coords: { lat: 58.5200, lng: 31.2720 }
+    },
+    {
+      id: 5,
+      name: 'Lada Vesta',
+      type: 'Комфорт',
+      price: 13,
+      image: '🚕',
+      features: ['Климат-контроль', 'Мультимедиа', 'Круиз-контроль'],
+      available: true,
+      coords: { lat: 58.5210, lng: 31.2760 }
     }
   ];
 
   const tariffs = [
     {
       name: 'Минутный',
-      price: '7 ₽/мин',
+      price: '13 ₽/мин',
       features: ['Без абонплаты', 'Гибкий тариф', 'Поминутная оплата'],
       popular: false
     },
     {
       name: 'Суточный',
-      price: '2990 ₽/сут',
-      features: ['До 250 км включено', 'Безлимитное время', 'Лучшая цена'],
+      price: '2000-2500 ₽/сут',
+      features: ['До 200 км включено', 'Безлимитное время', 'Лучшая цена для долгих поездок'],
       popular: true
-    },
-    {
-      name: 'Пакетный',
-      price: 'от 1490 ₽',
-      features: ['Пакеты минут', 'Выгодно для регулярных поездок', 'Скидки до 30%'],
-      popular: false
     }
   ];
 
@@ -197,7 +201,7 @@ const Index = () => {
                             <SelectContent>
                               {cars.filter(c => c.available).map(car => (
                                 <SelectItem key={car.id} value={car.id.toString()}>
-                                  {car.image} {car.name} - {car.price}₽/час
+                                  {car.image} {car.name} - {car.price}₽/мин
                                 </SelectItem>
                               ))}
                             </SelectContent>
@@ -275,7 +279,7 @@ const Index = () => {
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-primary">{car.price}₽</div>
-                        <div className="text-xs text-muted-foreground">за час</div>
+                        <div className="text-xs text-muted-foreground">за минуту</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -291,14 +295,13 @@ const Index = () => {
           <div className="text-center mb-12">
             <Badge className="mb-4">Автопарк</Badge>
             <h2 className="text-5xl font-bold mb-4">Наши <span className="text-gradient">автомобили</span></h2>
-            <p className="text-xl text-muted-foreground">От компактных хэтчбеков до премиальных седанов</p>
+            <p className="text-xl text-muted-foreground">Комфортные автомобили для ваших поездок по городу</p>
           </div>
           <Tabs defaultValue="all" className="space-y-8">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-4">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3">
               <TabsTrigger value="all">Все</TabsTrigger>
               <TabsTrigger value="econom">Эконом</TabsTrigger>
-              <TabsTrigger value="business">Бизнес</TabsTrigger>
-              <TabsTrigger value="premium">Премиум</TabsTrigger>
+              <TabsTrigger value="comfort">Комфорт</TabsTrigger>
             </TabsList>
             <TabsContent value="all" className="space-y-4">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
