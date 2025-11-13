@@ -146,7 +146,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="text-3xl">⚡</div>
-            <span className="text-2xl font-bold text-gradient">VeliGo</span>
+            <span className="text-2xl font-bold text-gradient">Novgorod Car</span>
           </div>
           <div className="hidden md:flex gap-6">
             <a href="#home" className="hover:text-primary transition-colors">Главная</a>
@@ -498,10 +498,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="text-3xl">⚡</div>
-              <span className="text-2xl font-bold text-gradient">VeliGo</span>
+              <span className="text-2xl font-bold text-gradient">Novgorod Car</span>
             </div>
             <div className="text-muted-foreground">
-              © 2024 VeliGo. Каршеринг в Великом Новгороде
+              © 2024 Novgorod Car. Каршеринг в Великом Новгороде
             </div>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
